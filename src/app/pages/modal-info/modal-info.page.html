@@ -1,0 +1,14 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>{{nombre}} -- {{ciudad}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-button (click)="salirSinArgs()" color="primary" expand="full">
+    Salir sin argumentos
+  </ion-button>
+  <ion-button (click)="salirConArgs()" color="secondary" expand="full">
+    Salir con argumentos
+  </ion-button>
+</ion-content>
