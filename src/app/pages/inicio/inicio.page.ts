@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { Componente } from '../../interfaces/interfaces';
+import { DataService } from '../../services/data.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-inicio',
@@ -6,77 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioPage implements OnInit {
 
-  componentes: Componente[] = [
-    {
-      icon: 'american-football',
-      name: 'Action-Sheet',
-      redirectTo: '/action-sheet'
-    },
-    {
-      icon: 'alert-circle-outline',
-      name: 'Alerta',
-      redirectTo: '/alert'
-    },
-    {
-      icon: 'images-outline',
-      name: 'Avatar',
-      redirectTo: '/avatar'
-    },
-    {
-      icon: 'radio-button-on',
-      name: 'Botones y router',
-      redirectTo: '/botones'
-    },
-    {
-      icon: 'card',
-      name: 'Cards',
-      redirectTo: '/card'
-    },
-    {
-      icon: 'checkmark-circle-outline',
-      name: 'Checkbox',
-      redirectTo: '/check'
-    },
-    {
-      icon: 'calendar',
-      name: 'DateTime',
-      redirectTo: '/date-time'
-    },
-    {
-      icon: 'car',
-      name: 'Fabs',
-      redirectTo: '/fab'
-    },
-    {
-      icon: 'grid',
-      name: 'Grid - Rows',
-      redirectTo: '/grid'
-    },
-    {
-      icon: 'infinite',
-      name: 'Infinite Scroll',
-      redirectTo: '/infinite-scroll'
-    },
-    {
-      icon: 'hammer',
-      name: 'Input',
-      redirectTo: '/input'
-    },
-    {
-      icon: 'list',
-      name: 'Listas - Sliding',
-      redirectTo: '/lista'
-    }
-  ];
-  constructor() { }
+  componentes: Observable<Componente[]>;
+  
+  constructor( private menuCtrl: MenuController,
+               private dataService: DataService ) { }
 
   ngOnInit() {
+    this.componentes = this.dataService.getMenuOptions();
   }
-
-}
-
-interface Componente {
-  icon: string;
-  name: string;
-  redirectTo;
+  
+  toggleMenu(){
+    this.menuCtrl.toggle('primerMenu');
+  }
 }
