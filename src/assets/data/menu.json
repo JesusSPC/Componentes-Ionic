@@ -88,5 +88,25 @@
     "icon": "arrow-down-circle-sharp",
     "name": "Refresher",
     "redirectTo": "/refresher"
+  },
+  {
+    "icon": "search-sharp",
+    "name": "Search Bar",
+    "redirectTo": "/search-bar"
+  },
+  {
+    "icon": "copy",
+    "name": "Segment",
+    "redirectTo": "/segment"
+  },
+  {
+    "icon": "albums",
+    "name": "Slides",
+    "redirectTo": "/slides"
+  },
+  {
+    "icon": "cog",
+    "name": "Tabs",
+    "redirectTo": "/tabs/account"
   }
 ]

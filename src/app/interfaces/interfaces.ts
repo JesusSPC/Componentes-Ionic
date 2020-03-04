@@ -3,3 +3,9 @@ export interface Componente {
   name: string;
   redirectTo;
 }
+
+export interface Slide {
+  img: string;
+  titulo: string;
+  desc: string;
+}
