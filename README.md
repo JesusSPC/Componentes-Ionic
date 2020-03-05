@@ -14,4 +14,4 @@ npm install
 ```
 ionic serve -o
 ```
-_Su navegador predeterminado se abrirá automáticamente en el puerto 4200._
+_Su navegador predeterminado se abrirá automáticamente en el puerto 8100._
